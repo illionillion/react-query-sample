@@ -93,7 +93,11 @@ export const TimelineForm: FC = () => {
                 ) : (
                     posts?.map((post) => (
                         <Card key={post.id}>
-                            <CardBody>{post.comment}</CardBody>
+                            <CardBody>
+                                <Text wordBreak="break-word">
+                                    {post.comment}
+                                </Text>
+                            </CardBody>
                         </Card>
                     ))
                 )}
