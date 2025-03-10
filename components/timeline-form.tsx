@@ -62,9 +62,11 @@ export const TimelineForm: FC = () => {
         },
     });
 
+    const onSubmit = (data: PostFormType) => mutation.mutate(data)
+
     return (
         <VStack>
-            <ui.form onSubmit={handleSubmit((data) => mutation.mutate(data))}>
+            <ui.form onSubmit={handleSubmit(onSubmit)}>
                 <VStack>
                     <FormControl
                         label="コメント"
